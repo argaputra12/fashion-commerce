@@ -13,6 +13,9 @@ class Product extends Model
         'id',
         'gender',
         'category',
-        'display_name'
+        'display_name',
+        'price',
+        'stock',
+        'is_active',
     ];
 }
