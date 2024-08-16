@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::all()->random()->id,
+            'status' => fake()->randomElement(['pending', 'shipped', 'cancelled', 'delivered']),
+            'address' => fake()->address(),
         ];
-    }
+
+   }
 }
